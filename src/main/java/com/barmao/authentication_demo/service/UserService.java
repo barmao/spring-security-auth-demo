@@ -5,10 +5,12 @@ import com.barmao.authentication_demo.exception.DuplicateException;
 import com.barmao.authentication_demo.model.User;
 import com.barmao.authentication_demo.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
-
+@Service
+@Transactional(readOnly = true)
 public class UserService {
 
     private final UserRepository userRepository;
